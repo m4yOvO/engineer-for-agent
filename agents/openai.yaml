@@ -1,0 +1,4 @@
+interface:
+  display_name: "Engineer for Agent"
+  short_description: "按项目场景规划、审查与实现 Agent 后端工程，覆盖循环、图工作流和插件架构"
+  default_prompt: "使用 $engineer-for-agent /brainstorming，根据我的项目需求规划适合当前规模与风险的 Agent 后端工程方案。"
