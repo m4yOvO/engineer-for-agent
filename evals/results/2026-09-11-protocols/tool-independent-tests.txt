@@ -1,0 +1,15 @@
+test_changed_content_under_same_operation_is_rejected (__main__.ToolContract.test_changed_content_under_same_operation_is_rejected) ... ok
+test_final_replay_uses_saved_text (__main__.ToolContract.test_final_replay_uses_saved_text) ... ok
+test_new_call_id_same_operation_reuses_result (__main__.ToolContract.test_new_call_id_same_operation_reuses_result) ... ok
+test_no_database_write_transaction_spans_external_call (__main__.ToolContract.test_no_database_write_transaction_spans_external_call) ... ok
+test_partial_results_survive_real_process_exit (__main__.ToolContract.test_partial_results_survive_real_process_exit) ... ok
+test_query_unavailable_does_not_resend_unknown_write (__main__.ToolContract.test_query_unavailable_does_not_resend_unknown_write) ... ok
+test_response_lost_recovers_by_query (__main__.ToolContract.test_response_lost_recovers_by_query) ... ok
+test_saved_decision_is_not_regenerated (__main__.ToolContract.test_saved_decision_is_not_regenerated) ... ok
+test_saved_message_is_not_appended_twice (__main__.ToolContract.test_saved_message_is_not_appended_twice) ... ok
+test_saved_result_is_reused_before_projection (__main__.ToolContract.test_saved_result_is_reused_before_projection) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.136s
+
+OK

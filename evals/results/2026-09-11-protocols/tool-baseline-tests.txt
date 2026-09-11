@@ -1,0 +1,87 @@
+test_changed_content_under_same_operation_is_rejected (__main__.ToolContract.test_changed_content_under_same_operation_is_rejected) ... ok
+test_final_replay_uses_saved_text (__main__.ToolContract.test_final_replay_uses_saved_text) ... FAIL
+test_new_call_id_same_operation_reuses_result (__main__.ToolContract.test_new_call_id_same_operation_reuses_result) ... FAIL
+test_no_database_write_transaction_spans_external_call (__main__.ToolContract.test_no_database_write_transaction_spans_external_call) ... ok
+test_partial_results_survive_real_process_exit (__main__.ToolContract.test_partial_results_survive_real_process_exit) ... FAIL
+test_query_unavailable_does_not_resend_unknown_write (__main__.ToolContract.test_query_unavailable_does_not_resend_unknown_write) ... FAIL
+test_response_lost_recovers_by_query (__main__.ToolContract.test_response_lost_recovers_by_query) ... FAIL
+test_saved_decision_is_not_regenerated (__main__.ToolContract.test_saved_decision_is_not_regenerated) ... FAIL
+test_saved_message_is_not_appended_twice (__main__.ToolContract.test_saved_message_is_not_appended_twice) ... FAIL
+test_saved_result_is_reused_before_projection (__main__.ToolContract.test_saved_result_is_reused_before_projection) ... FAIL
+
+======================================================================
+FAIL: test_final_replay_uses_saved_text (__main__.ToolContract.test_final_replay_uses_saved_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_tool_recovery.py", line 59, in test_final_replay_uses_saved_text
+    self.result_contract(first)
+  File "evals/assess_tool_recovery.py", line 41, in result_contract
+    self.assertEqual([x[0] for x in self.model.history()].count("plan"), 1)
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_new_call_id_same_operation_reuses_result (__main__.ToolContract.test_new_call_id_same_operation_reuses_result)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_tool_recovery.py", line 141, in test_new_call_id_same_operation_reuses_result
+    self.assertEqual(self.execute_count("shared"), 1)
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_partial_results_survive_real_process_exit (__main__.ToolContract.test_partial_results_survive_real_process_exit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_tool_recovery.py", line 85, in test_partial_results_survive_real_process_exit
+    self.assertEqual(process.returncode, 79, process.stderr)
+AssertionError: 0 != 79 :
+
+======================================================================
+FAIL: test_query_unavailable_does_not_resend_unknown_write (__main__.ToolContract.test_query_unavailable_does_not_resend_unknown_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_tool_recovery.py", line 125, in test_query_unavailable_does_not_resend_unknown_write
+    with self.assertRaises(Exception):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Exception not raised
+
+======================================================================
+FAIL: test_response_lost_recovers_by_query (__main__.ToolContract.test_response_lost_recovers_by_query)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_tool_recovery.py", line 108, in test_response_lost_recovers_by_query
+    self.result_contract(result)
+  File "evals/assess_tool_recovery.py", line 41, in result_contract
+    self.assertEqual([x[0] for x in self.model.history()].count("plan"), 1)
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_saved_decision_is_not_regenerated (__main__.ToolContract.test_saved_decision_is_not_regenerated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_tool_recovery.py", line 63, in test_saved_decision_is_not_regenerated
+    with self.assertRaises(RuntimeError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+======================================================================
+FAIL: test_saved_message_is_not_appended_twice (__main__.ToolContract.test_saved_message_is_not_appended_twice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_tool_recovery.py", line 97, in test_saved_message_is_not_appended_twice
+    with self.assertRaises(RuntimeError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+======================================================================
+FAIL: test_saved_result_is_reused_before_projection (__main__.ToolContract.test_saved_result_is_reused_before_projection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_tool_recovery.py", line 91, in test_saved_result_is_reused_before_projection
+    with self.assertRaises(RuntimeError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.084s
+
+FAILED (failures=8)

@@ -43,12 +43,24 @@ $engineer-for-agent /build
 
 ## 内容导航
 
-- [14 个能力领域](references/capability-map.md)：把适用条件、设计问题和证据连接起来。
-- [架构适配](references/architecture-adapters.md)：避免重复实现框架已有能力，覆盖图节点重入、工作流历史、会话分支和多 Agent 委派。
-- [接口与数据](references/contracts-and-data.md)、[执行与恢复](references/execution-and-recovery.md)、[安全与资源](references/security-and-resources.md)、[交付与评测](references/delivery-and-evaluation.md)：按需读取的工程参考。
-- [公开源码与提炼说明](references/sources.md)：DeepSeek Harness、Codex、Hermes、Pi、LangGraph 的固定版本参考，以及私有学习材料的泛化方法。
-- [场景验收集](evals/scenarios.md)：检查模式边界与跨架构适用性。
-- [承诺到交付证据](references/evidence-workflow.md)：衔接规划、审查、构建及失败窗口验收。
-- [隔离行为验证](evals/behavior-protocol.md)：用模拟项目检查 Skill 的实际输出与代码行为，分别记录静态检查和运行证据；见[本次六项更新与实际结果](evals/validation-2026-09-11-update.md)。
+先读 [SKILL.md](SKILL.md)，用模式确定工作范围，再通过 [工程阶段入口](references/engineering-workflow.md) 找到当前需要的协议。
+
+| 阶段 | 设计、实现与验收 |
+|---|---|
+| 接口与身份 | [调用合同、受理、错误和身份关联](references/stages/interfaces.md) |
+| 数据与表 | [实体、字段、键、索引、事务、迁移和保留](references/stages/data-and-storage.md) |
+| 状态机与图 | [转移/路由、等待、取消、原子提交与恢复](references/stages/state-and-lifecycle.md) |
+| 队列与执行 | [受理、派工、领取、ACK、重试、租约和积压](references/stages/queue-and-execution.md) |
+| 工具调用 | [决策、调用、动作、尝试、结果和上下文回填](references/stages/tool-execution.md) |
+| 模型与上下文 | [provider、消息、压缩、记忆与 RAG](references/stages/model-and-context.md) |
+| 安全与资源 | [权限、隔离、截止、并发与预算](references/stages/security-and-resources.md) |
+| 事件与观测 | [快照、历史、订阅、撤权、Trace 与告警](references/stages/events-and-observability.md) |
+| 交付与运行 | [测试、升级、在途兼容、运行手册与评测](references/stages/delivery-and-operations.md) |
+
+横向参考：[14 个能力领域](references/capability-map.md)、[架构适配](references/architecture-adapters.md)、[承诺到交付证据](references/evidence-workflow.md)、[公开源码与来源](references/sources.md)。
+
+阶段可以合并和迭代，已有平台能力可直接承担合同。队列和状态机有明确协议，但不会强制本地 CLI 引入 Broker，或为已有工作流再造一套状态机。原综合参考页保留旧链接导航，正文集中在阶段协议中。
+
+维护验证：[场景集](evals/scenarios.md)、[隔离行为协议](evals/behavior-protocol.md)、[六项更新记录](evals/validation-2026-09-11-update.md)、[阶段协议与工具恢复验证](evals/validation-2026-09-11-protocols.md)。
 
 Skill 能帮助形成设计与证据，但不能仅凭文档或静态检查认证生产就绪。具体框架 API、默认重试和持久化模式需要按项目版本核对。

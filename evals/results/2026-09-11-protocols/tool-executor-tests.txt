@@ -1,0 +1,19 @@
+test_alias_call_reuses_result_but_preserves_both_messages (test_engine.RecoveryTests.test_alias_call_reuses_result_but_preserves_both_messages) ... ok
+test_changed_arguments_and_duplicate_call_ids_rejected_before_tools (test_engine.RecoveryTests.test_changed_arguments_and_duplicate_call_ids_rejected_before_tools) ... ok
+test_confirmed_no_effect_retries_only_on_later_resume (test_engine.RecoveryTests.test_confirmed_no_effect_retries_only_on_later_resume) ... ok
+test_crash_before_conflict_record_cannot_import_different_content (test_engine.RecoveryTests.test_crash_before_conflict_record_cannot_import_different_content) ... ok
+test_empty_decision_and_empty_final_are_stable (test_engine.RecoveryTests.test_empty_decision_and_empty_final_are_stable) ... ok
+test_exception_hooks_commit_before_callback_and_do_not_repeat (test_engine.RecoveryTests.test_exception_hooks_commit_before_callback_and_do_not_repeat) ... ok
+test_existing_downstream_key_conflict_does_not_reuse_wrong_result (test_engine.RecoveryTests.test_existing_downstream_key_conflict_does_not_reuse_wrong_result) ... ok
+test_finish_response_gap_can_repeat_finish_but_never_tools (test_engine.RecoveryTests.test_finish_response_gap_can_repeat_finish_but_never_tools) ... ok
+test_legacy_and_future_states_fail_without_reexecution (test_engine.RecoveryTests.test_legacy_and_future_states_fail_without_reexecution) ... ok
+test_lookup_outage_preserves_partial_progress_and_never_resends (test_engine.RecoveryTests.test_lookup_outage_preserves_partial_progress_and_never_resends) ... ok
+test_order_pairing_history_and_repeat_final (test_engine.RecoveryTests.test_order_pairing_history_and_repeat_final) ... ok
+test_real_process_exit_and_reopen_at_each_checkpoint (test_engine.RecoveryTests.test_real_process_exit_and_reopen_at_each_checkpoint) ... ok
+test_response_lost_after_effect_is_reconciled (test_engine.RecoveryTests.test_response_lost_after_effect_is_reconciled) ... ok
+test_result_commit_failure_is_recovered_by_lookup_without_resend (test_engine.RecoveryTests.test_result_commit_failure_is_recovered_by_lookup_without_resend) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.707s
+
+OK

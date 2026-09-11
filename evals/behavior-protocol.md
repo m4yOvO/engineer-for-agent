@@ -38,3 +38,24 @@ python3 evals/assess_build.py /absolute/path/to/isolated/build_wait
 记录 Skill 摘要、案例/材料版本、是否独立执行、实际产物、项目变更摘要、人工判定、运行命令与结果、未验证项。对构建产物保留可重现的补丁或完整小型实现。发生失败时保留原始结果，针对原因修订后再运行受影响案例，不能只记录最后一次通过。
 
 已执行记录：[2026-09-11 六项更新与行为验证](validation-2026-09-11-update.md)。
+
+## 阶段协议的后续评估
+
+新增合成材料：
+
+| ID | 输入 | 人工判定和运行重点 |
+|---|---|---|
+| S01/S02 | [阶段规划](fixtures/stage_planning/README.md) | CLI 合理简化；托管工作流复用平台责任，数据/状态/队列/工具各有可交接合同，不把未知写成已验证 |
+| T01 | [工具恢复](fixtures/tool_recovery/README.md) | 已保存决策复用、多工具部分成功、结果/消息提交后退出、未决写核实、同意图新 call ID 与内容冲突 |
+
+独立执行者按上面的隔离规则使用相应副本；不提供此判定表或 [assess_tool_recovery.py](assess_tool_recovery.py)。构建允许修改 engine.py、测试和说明，fakes.py 固定；模型与外部效果都由本地标准库模拟。上层单执行者是题设，不验证多副本互斥；真实 provider 防重期限也没有被验证。
+
+构建结束后，维护者可从仓库根目录运行：
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -B evals/assess_tool_recovery.py /absolute/path/to/isolated/tool_recovery
+```
+
+该验收器执行给定目录的 engine.py 与 fakes.py，只对已检查的可信副本使用。检查公开入口、模型/工具请求次数、实际 fake 效果和下一轮消息，原始不完善夹具作为负向对照。
+
+本次实际结果：[阶段协议整理与工具恢复验证](validation-2026-09-11-protocols.md)。
