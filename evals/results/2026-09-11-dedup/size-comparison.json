@@ -1,0 +1,33 @@
+{
+  "method": "Unicode characters, including Markdown; not model tokens. Historical evals and README excluded.",
+  "all_instructions": {
+    "before_characters": 56285,
+    "after_characters": 44282,
+    "reduction_percent": 21.3
+  },
+  "entrypoint": {
+    "before_characters": 3982,
+    "after_characters": 1803,
+    "reduction_percent": 54.7
+  },
+  "shared_entry_and_router": {
+    "before_characters": 7376,
+    "after_characters": 3714,
+    "reduction_percent": 49.6
+  },
+  "planning_core": {
+    "before_characters": 15987,
+    "after_characters": 7083,
+    "reduction_percent": 55.7
+  },
+  "check_core": {
+    "before_characters": 16353,
+    "after_characters": 7461,
+    "reduction_percent": 54.4
+  },
+  "build_core": {
+    "before_characters": 11121,
+    "after_characters": 5287,
+    "reduction_percent": 52.5
+  }
+}

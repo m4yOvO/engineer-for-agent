@@ -1,0 +1,366 @@
+{
+  "environment": {
+    "python": "3.12.6",
+    "network_used": false,
+    "runtime": "ContractRuntime",
+    "publisher": "PublisherFake subclass counting calls",
+    "entrypoint": "evals/fixtures/item_adaptation/check/app.py",
+    "project_mutated": false
+  },
+  "cases": [
+    {
+      "id": "T01_same_command_same_content",
+      "steps": [
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-1"
+          },
+          "error": null,
+          "effects": 1,
+          "publisher_calls": 1,
+          "completed_activities": 1
+        },
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-1"
+          },
+          "error": null,
+          "effects": 1,
+          "publisher_calls": 1,
+          "completed_activities": 1
+        }
+      ],
+      "effect_keys": [
+        "wf-c1:publish"
+      ],
+      "workflow_ids": [
+        "wf-c1"
+      ],
+      "effect_count": 1,
+      "publisher_calls": 1,
+      "completed_activities": 1
+    },
+    {
+      "id": "T02_new_command_same_approved_revision",
+      "steps": [
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-1"
+          },
+          "error": null,
+          "effects": 1,
+          "publisher_calls": 1,
+          "completed_activities": 1
+        },
+        {
+          "command_id": "c2",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-2"
+          },
+          "error": null,
+          "effects": 2,
+          "publisher_calls": 2,
+          "completed_activities": 2
+        }
+      ],
+      "effect_keys": [
+        "wf-c1:publish",
+        "wf-c2:publish"
+      ],
+      "workflow_ids": [
+        "wf-c1",
+        "wf-c2"
+      ],
+      "effect_count": 2,
+      "publisher_calls": 2,
+      "completed_activities": 2
+    },
+    {
+      "id": "T03_new_command_changed_body_same_revision",
+      "steps": [
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-1"
+          },
+          "error": null,
+          "effects": 1,
+          "publisher_calls": 1,
+          "completed_activities": 1
+        },
+        {
+          "command_id": "c2",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "changed text",
+          "result": {
+            "publication_id": "p-2"
+          },
+          "error": null,
+          "effects": 2,
+          "publisher_calls": 2,
+          "completed_activities": 2
+        }
+      ],
+      "effect_keys": [
+        "wf-c1:publish",
+        "wf-c2:publish"
+      ],
+      "workflow_ids": [
+        "wf-c1",
+        "wf-c2"
+      ],
+      "effect_count": 2,
+      "publisher_calls": 2,
+      "completed_activities": 2
+    },
+    {
+      "id": "T04_new_revision_same_body",
+      "steps": [
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-1"
+          },
+          "error": null,
+          "effects": 1,
+          "publisher_calls": 1,
+          "completed_activities": 1
+        },
+        {
+          "command_id": "c2",
+          "document_id": "doc-1",
+          "approved_revision": "r2",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-2"
+          },
+          "error": null,
+          "effects": 2,
+          "publisher_calls": 2,
+          "completed_activities": 2
+        }
+      ],
+      "effect_keys": [
+        "wf-c1:publish",
+        "wf-c2:publish"
+      ],
+      "workflow_ids": [
+        "wf-c1",
+        "wf-c2"
+      ],
+      "effect_count": 2,
+      "publisher_calls": 2,
+      "completed_activities": 2
+    },
+    {
+      "id": "T05_same_command_changed_body",
+      "steps": [
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-1"
+          },
+          "error": null,
+          "effects": 1,
+          "publisher_calls": 1,
+          "completed_activities": 1
+        },
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "changed text",
+          "result": null,
+          "error": {
+            "type": "ValueError",
+            "message": "command content conflict"
+          },
+          "effects": 1,
+          "publisher_calls": 1,
+          "completed_activities": 1
+        }
+      ],
+      "effect_keys": [
+        "wf-c1:publish"
+      ],
+      "workflow_ids": [
+        "wf-c1"
+      ],
+      "effect_count": 1,
+      "publisher_calls": 1,
+      "completed_activities": 1
+    },
+    {
+      "id": "T06_lost_reply_same_command",
+      "steps": [
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": null,
+          "error": {
+            "type": "TimeoutError",
+            "message": "response lost after creation"
+          },
+          "effects": 1,
+          "publisher_calls": 1,
+          "completed_activities": 0
+        },
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-1"
+          },
+          "error": null,
+          "effects": 1,
+          "publisher_calls": 2,
+          "completed_activities": 1
+        }
+      ],
+      "effect_keys": [
+        "wf-c1:publish"
+      ],
+      "workflow_ids": [
+        "wf-c1"
+      ],
+      "effect_count": 1,
+      "publisher_calls": 2,
+      "completed_activities": 1
+    },
+    {
+      "id": "T07_lost_reply_new_command",
+      "steps": [
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": null,
+          "error": {
+            "type": "TimeoutError",
+            "message": "response lost after creation"
+          },
+          "effects": 1,
+          "publisher_calls": 1,
+          "completed_activities": 0
+        },
+        {
+          "command_id": "c2",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-2"
+          },
+          "error": null,
+          "effects": 2,
+          "publisher_calls": 2,
+          "completed_activities": 1
+        }
+      ],
+      "effect_keys": [
+        "wf-c1:publish",
+        "wf-c2:publish"
+      ],
+      "workflow_ids": [
+        "wf-c1",
+        "wf-c2"
+      ],
+      "effect_count": 2,
+      "publisher_calls": 2,
+      "completed_activities": 1
+    },
+    {
+      "id": "T08_other_document_same_revision",
+      "steps": [
+        {
+          "command_id": "c1",
+          "document_id": "doc-1",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-1"
+          },
+          "error": null,
+          "effects": 1,
+          "publisher_calls": 1,
+          "completed_activities": 1
+        },
+        {
+          "command_id": "c2",
+          "document_id": "doc-2",
+          "approved_revision": "r1",
+          "body": "approved text",
+          "result": {
+            "publication_id": "p-2"
+          },
+          "error": null,
+          "effects": 2,
+          "publisher_calls": 2,
+          "completed_activities": 2
+        }
+      ],
+      "effect_keys": [
+        "wf-c1:publish",
+        "wf-c2:publish"
+      ],
+      "workflow_ids": [
+        "wf-c1",
+        "wf-c2"
+      ],
+      "effect_count": 2,
+      "publisher_calls": 2,
+      "completed_activities": 2
+    }
+  ],
+  "T09_direct_publisher_contract": {
+    "first": {
+      "publication_id": "p-1"
+    },
+    "repeat": {
+      "publication_id": "p-1"
+    },
+    "conflict": "publisher content conflict",
+    "effect_count": 1
+  },
+  "observed_assertions_passed": true,
+  "business_contract_failures": [
+    "T02",
+    "T03",
+    "T07"
+  ],
+  "limits": [
+    "sequential in-memory checks",
+    "no process restart proof",
+    "no real service or production validation"
+  ]
+}

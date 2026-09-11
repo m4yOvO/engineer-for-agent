@@ -70,3 +70,7 @@ PYTHONDONTWRITEBYTECODE=1 python3 -B evals/assess_tool_recovery.py /absolute/pat
 使用指令快照与独立项目副本。执行者只接收用户请求与最少材料，不接收本表及其他结果；审查只执行本地 fake，Python 使用 `-B` 防止写入项目字节码。规划和审查输出保存在项目外，完成后核对项目摘要。
 
 本轮实际记录：[逐条适配验证](validation-2026-09-11-adaptation.md)。以上为合成场景，A02 的内存 fake 不证明生产持久性或真实下游的幂等期限。
+
+## 指令去重验证
+
+精简入口、模式、能力索引及共用规则后的检查见 [指令去重记录](validation-2026-09-11-dedup.md)。本轮复用 P01 本地规划和 A02 发布审查材料，不新增项目能力要求。
