@@ -59,8 +59,8 @@ $engineer-for-agent /build
 
 横向参考：[14 个能力领域](references/capability-map.md)、[架构适配](references/architecture-adapters.md)、[承诺到交付证据](references/evidence-workflow.md)、[公开源码与来源](references/sources.md)。
 
-阶段可以合并和迭代，已有平台能力可直接承担合同。队列和状态机有明确协议，但不会强制本地 CLI 引入 Broker，或为已有工作流再造一套状态机。原综合参考页保留旧链接导航，正文集中在阶段协议中。
+阶段内部也按 [逐条适配规则](references/engineering-workflow.md#逐条适配与项目记录) 选择采用、等价替代、合并简化、暂缓或不适用，并补充项目特有要求。规划、审查和构建接续同一份项目适配记录；审查会按当前需求重新核验旧选择。阶段可以合并和迭代，已有平台能力可直接承担合同。队列和状态机有明确协议，但不会强制本地 CLI 引入 Broker，或为已有工作流再造一套状态机。原综合参考页保留旧链接导航，正文集中在阶段协议中。
 
-维护验证：[场景集](evals/scenarios.md)、[隔离行为协议](evals/behavior-protocol.md)、[六项更新记录](evals/validation-2026-09-11-update.md)、[阶段协议与工具恢复验证](evals/validation-2026-09-11-protocols.md)。
+维护验证：[场景集](evals/scenarios.md)、[隔离行为协议](evals/behavior-protocol.md)、[六项更新记录](evals/validation-2026-09-11-update.md)、[阶段协议与工具恢复验证](evals/validation-2026-09-11-protocols.md)、[逐条适配验证](evals/validation-2026-09-11-adaptation.md)。
 
 Skill 能帮助形成设计与证据，但不能仅凭文档或静态检查认证生产就绪。具体框架 API、默认重试和持久化模式需要按项目版本核对。

@@ -59,3 +59,14 @@ PYTHONDONTWRITEBYTECODE=1 python3 -B evals/assess_tool_recovery.py /absolute/pat
 该验收器执行给定目录的 engine.py 与 fakes.py，只对已检查的可信副本使用。检查公开入口、模型/工具请求次数、实际 fake 效果和下一轮消息，原始不完善夹具作为负向对照。
 
 本次实际结果：[阶段协议整理与工具恢复验证](validation-2026-09-11-protocols.md)。
+
+## 逐条适配的后续评估
+
+| ID | 输入 | 人工核对的行为 |
+|---|---|---|
+| A01 | [实时演练助手](fixtures/item_adaptation/planning.md) | 对同一阶段分别保留、简化和省略；实现责任具体，遵守隐私/导出限制，并补充旧轮结果隔离 |
+| A02 | [发布服务审查](fixtures/item_adaptation/check/README.md) | 重判旧计划；跟踪实际调用与业务身份，区分平台等价责任、已知缺陷和生产未知；审查不修改项目 |
+
+使用指令快照与独立项目副本。执行者只接收用户请求与最少材料，不接收本表及其他结果；审查只执行本地 fake，Python 使用 `-B` 防止写入项目字节码。规划和审查输出保存在项目外，完成后核对项目摘要。
+
+本轮实际记录：[逐条适配验证](validation-2026-09-11-adaptation.md)。以上为合成场景，A02 的内存 fake 不证明生产持久性或真实下游的幂等期限。

@@ -1,0 +1,233 @@
+{
+  "python_version": "3.12.6",
+  "project_manifest": {
+    "README.md": "cfc7520aed5ea486e90bb01f3132be667e9ef0a9f47cc818281743f0a6f037e0",
+    "app.py": "c5fcbdad98e2c15da60d096f075f04b5018c244bf484c4b6055de99a279a48b5",
+    "old-plan.md": "cef5175669317413f99dc1b3398c22206cc585c01e71565f81a4899d23bf3324",
+    "runtime_fixture.py": "b9001e691ca18400775b43cc01bd64d4a6a5f81c41338bc00b4b0f3c0866a483"
+  },
+  "project_unchanged": true,
+  "scenario_count": 8,
+  "requirements_met": 5,
+  "requirements_violated": 3,
+  "cases": [
+    {
+      "name": "same command, same approved revision and body",
+      "meets_current_requirement": true,
+      "expected_effects": 1,
+      "expected_conflict": false,
+      "first_result": {
+        "publication_id": "p-1"
+      },
+      "first_error": null,
+      "after_first_call": {
+        "workflows": 1,
+        "history_results": 1,
+        "effects": 1,
+        "calls": 1
+      },
+      "second_result": {
+        "publication_id": "p-1"
+      },
+      "second_error": null,
+      "actual_effects": 1,
+      "publisher_calls": 1,
+      "downstream_keys": [
+        "wf-cmd-a:publish"
+      ],
+      "workflow_count": 1,
+      "history_results": 1
+    },
+    {
+      "name": "new command, same approved revision and body",
+      "meets_current_requirement": false,
+      "expected_effects": 1,
+      "expected_conflict": false,
+      "first_result": {
+        "publication_id": "p-1"
+      },
+      "first_error": null,
+      "after_first_call": {
+        "workflows": 1,
+        "history_results": 1,
+        "effects": 1,
+        "calls": 1
+      },
+      "second_result": {
+        "publication_id": "p-2"
+      },
+      "second_error": null,
+      "actual_effects": 2,
+      "publisher_calls": 2,
+      "downstream_keys": [
+        "wf-cmd-a:publish",
+        "wf-cmd-b:publish"
+      ],
+      "workflow_count": 2,
+      "history_results": 2
+    },
+    {
+      "name": "same command, changed body",
+      "meets_current_requirement": true,
+      "expected_effects": 1,
+      "expected_conflict": true,
+      "first_result": {
+        "publication_id": "p-1"
+      },
+      "first_error": null,
+      "after_first_call": {
+        "workflows": 1,
+        "history_results": 1,
+        "effects": 1,
+        "calls": 1
+      },
+      "second_result": null,
+      "second_error": "command content conflict",
+      "actual_effects": 1,
+      "publisher_calls": 1,
+      "downstream_keys": [
+        "wf-cmd-a:publish"
+      ],
+      "workflow_count": 1,
+      "history_results": 1
+    },
+    {
+      "name": "new command, same approved revision but changed body",
+      "meets_current_requirement": false,
+      "expected_effects": 1,
+      "expected_conflict": true,
+      "first_result": {
+        "publication_id": "p-1"
+      },
+      "first_error": null,
+      "after_first_call": {
+        "workflows": 1,
+        "history_results": 1,
+        "effects": 1,
+        "calls": 1
+      },
+      "second_result": {
+        "publication_id": "p-2"
+      },
+      "second_error": null,
+      "actual_effects": 2,
+      "publisher_calls": 2,
+      "downstream_keys": [
+        "wf-cmd-a:publish",
+        "wf-cmd-b:publish"
+      ],
+      "workflow_count": 2,
+      "history_results": 2
+    },
+    {
+      "name": "new command, new approved revision with same body",
+      "meets_current_requirement": true,
+      "expected_effects": 2,
+      "expected_conflict": false,
+      "first_result": {
+        "publication_id": "p-1"
+      },
+      "first_error": null,
+      "after_first_call": {
+        "workflows": 1,
+        "history_results": 1,
+        "effects": 1,
+        "calls": 1
+      },
+      "second_result": {
+        "publication_id": "p-2"
+      },
+      "second_error": null,
+      "actual_effects": 2,
+      "publisher_calls": 2,
+      "downstream_keys": [
+        "wf-cmd-a:publish",
+        "wf-cmd-b:publish"
+      ],
+      "workflow_count": 2,
+      "history_results": 2
+    },
+    {
+      "name": "publisher reply lost, same command retried",
+      "meets_current_requirement": true,
+      "expected_effects": 1,
+      "expected_conflict": false,
+      "first_result": null,
+      "first_error": "response lost after creation",
+      "after_first_call": {
+        "workflows": 1,
+        "history_results": 0,
+        "effects": 1,
+        "calls": 1
+      },
+      "second_result": {
+        "publication_id": "p-1"
+      },
+      "second_error": null,
+      "actual_effects": 1,
+      "publisher_calls": 2,
+      "downstream_keys": [
+        "wf-cmd-a:publish"
+      ],
+      "workflow_count": 1,
+      "history_results": 1
+    },
+    {
+      "name": "publisher reply lost, new command retried",
+      "meets_current_requirement": false,
+      "expected_effects": 1,
+      "expected_conflict": false,
+      "first_result": null,
+      "first_error": "response lost after creation",
+      "after_first_call": {
+        "workflows": 1,
+        "history_results": 0,
+        "effects": 1,
+        "calls": 1
+      },
+      "second_result": {
+        "publication_id": "p-2"
+      },
+      "second_error": null,
+      "actual_effects": 2,
+      "publisher_calls": 2,
+      "downstream_keys": [
+        "wf-cmd-a:publish",
+        "wf-cmd-b:publish"
+      ],
+      "workflow_count": 2,
+      "history_results": 1
+    },
+    {
+      "name": "successful publish before activity completion record, same command retried",
+      "meets_current_requirement": true,
+      "expected_effects": 1,
+      "expected_conflict": false,
+      "first_result": null,
+      "first_error": "injected: activity completion not recorded",
+      "after_first_call": {
+        "workflows": 1,
+        "history_results": 0,
+        "effects": 1,
+        "calls": 1
+      },
+      "second_result": {
+        "publication_id": "p-1"
+      },
+      "second_error": null,
+      "actual_effects": 1,
+      "publisher_calls": 2,
+      "downstream_keys": [
+        "wf-cmd-a:publish"
+      ],
+      "workflow_count": 1,
+      "history_results": 1
+    }
+  ],
+  "limitations": [
+    "in-memory contract doubles only",
+    "no process restart or real dependencies",
+    "no concurrent or load testing",
+    "no network or external publication"
+  ]
+}
