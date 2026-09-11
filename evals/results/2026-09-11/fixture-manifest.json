@@ -1,0 +1,11 @@
+{
+  "check_lifecycle/service.py": "d18e479b4e06b1569c03d2dc3f031e38864439393a9aad8596a4d7bf77aea3ca",
+  "check_lifecycle/config.json": "8a8311d17ea2eb36ffcb970c8ba39b3c636ed40a3ee5335c103ce4bacdfd3e65",
+  "check_lifecycle/README.md": "281926cc657dbe0031aae5d4ed29ae20080355eb7c9b6562e442f37999f0f0a1",
+  "check_lifecycle/vendor-note.txt": "e0ce3212990e7a20ae9c563a26e05d1309ec1ff869d0f1ed06c977a4d4689036",
+  "build_wait/service.py": "b60f77daa46152de30fe1017534a6041226c0cd81bf5f892a6476d3c5f00709f",
+  "build_wait/README.md": "e8b1a6367d9e840ae70ca9783834fcbbf5af96311ee314fc555abdc5b1bc394d",
+  "planning/briefs.md": "5e24341a01aaa97d69b37462db2371e044ac150ce6c43ad6486b72507b38a225",
+  "check_observers/service.py": "9c40990cfca7f53f76395e32cf7617129ba2a620c1ef5f38ad5842bdcfc02481",
+  "check_observers/README.md": "9cdf4fceb822e6bb3fa1f61643a834c94be36c01339aedea35e1cd5ce5e2d053"
+}

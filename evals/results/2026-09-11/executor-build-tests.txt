@@ -1,0 +1,25 @@
+test_abrupt_process_exit_during_pause_is_rolled_back (test_service.ServiceTests.test_abrupt_process_exit_during_pause_is_rolled_back) ... ok
+test_cancel_preserves_wait_and_history_and_blocks_resume (test_service.ServiceTests.test_cancel_preserves_wait_and_history_and_blocks_resume) ... ok
+test_cancel_resume_race_has_one_persistent_winner (test_service.ServiceTests.test_cancel_resume_race_has_one_persistent_winner) ... ok
+test_concurrent_distinct_resume_accepts_only_one (test_service.ServiceTests.test_concurrent_distinct_resume_accepts_only_one) ... ok
+test_concurrent_duplicate_resume_returns_one_result_and_job (test_service.ServiceTests.test_concurrent_duplicate_resume_returns_one_result_and_job) ... ok
+test_duplicate_resume_replays_persisted_result (test_service.ServiceTests.test_duplicate_resume_replays_persisted_result) ... ok
+test_history_write_failure_rolls_back_each_operation (test_service.ServiceTests.test_history_write_failure_rolls_back_each_operation) ... ok
+test_invalid_json_or_command_id_does_not_mutate (test_service.ServiceTests.test_invalid_json_or_command_id_does_not_mutate) ... ok
+test_job_write_failure_rolls_back_resume_and_allows_retry (test_service.ServiceTests.test_job_write_failure_rolls_back_resume_and_allows_retry) ... ok
+test_json_scalar_values_round_trip (test_service.ServiceTests.test_json_scalar_values_round_trip) ... ok
+test_legacy_schema_and_history_are_preserved (test_service.ServiceTests.test_legacy_schema_and_history_are_preserved) ... ok
+test_message_id_conflicts_reject_all_content_changes (test_service.ServiceTests.test_message_id_conflicts_reject_all_content_changes) ... ok
+test_pause_injected_failure_rolls_back_and_can_retry (test_service.ServiceTests.test_pause_injected_failure_rolls_back_and_can_retry) ... ok
+test_pause_only_accepts_active (test_service.ServiceTests.test_pause_only_accepts_active) ... ok
+test_pending_caller_transaction_is_not_committed_or_rolled_back (test_service.ServiceTests.test_pending_caller_transaction_is_not_committed_or_rolled_back) ... ok
+test_public_entry_and_signatures (test_service.ServiceTests.test_public_entry_and_signatures) ... ok
+test_ready_task_rejects_cancel_pause_and_new_resume (test_service.ServiceTests.test_ready_task_rejects_cancel_pause_and_new_resume) ... ok
+test_reopen_retains_snapshot_result_and_dispatch_input (test_service.ServiceTests.test_reopen_retains_snapshot_result_and_dispatch_input) ... ok
+test_same_message_race_across_tasks_preserves_loser (test_service.ServiceTests.test_same_message_race_across_tasks_preserves_loser) ... ok
+test_wrong_wait_or_task_does_not_consume_command_id (test_service.ServiceTests.test_wrong_wait_or_task_does_not_consume_command_id) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.212s
+
+OK

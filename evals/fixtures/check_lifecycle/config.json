@@ -1,0 +1,1 @@
+{"store": "sqlite", "database": "tasks.db", "max_duration_seconds": 120}

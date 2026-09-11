@@ -1,0 +1,15 @@
+{
+  "SKILL.md": "f76649fdb2bee12865581260c4539576a00bfbead93bb91fe679cae6c0e740f2",
+  "agents/openai.yaml": "a038e865cdcb00cce3a181def5a72d8bbc219b9ab6669e2c26b3b809f8084be2",
+  "references/architecture-adapters.md": "300d03ba48211d756d007ae6e7ab21c4248dcd447eaee0449dd2ecc7594269a9",
+  "references/brainstorming.md": "f3f8c796c7f6b46e724a1bf66ffcbe763c882837de58b5ebf6cee32cd3189733",
+  "references/build.md": "84ea97f9ada10ad71939c3e93aab4894c6a8b8e29351672505f1347ffa353933",
+  "references/capability-map.md": "3da318bc80eab81976ea4984b293b0ed796f1cac9c9e369bb1bc89c48a43430b",
+  "references/check.md": "2386d883bc4fe927401877bc8713e27bed89e6a1e9009d717a9815d163e47520",
+  "references/contracts-and-data.md": "814fd1aadf8baad6a6f895a831f3879b86e2b956b1e86936725068c65b745d79",
+  "references/delivery-and-evaluation.md": "aa44af577d6c4332d44386161246cf9b8a3ba300e0a625a05637f49bdbfa0a3e",
+  "references/evidence-workflow.md": "317bf8bb917b2c78e07ed428b28558114e3a6ca1f5d8fb30f4ffa5166163f1bf",
+  "references/execution-and-recovery.md": "40d03342aaca92b3f6430370336b1fe968043e645cd374434636c9139b8307b2",
+  "references/security-and-resources.md": "adf1bb5277eca0c866b17bf60af939539b615310158bfa3f895d02b9660a4d87",
+  "references/sources.md": "2c661da93633d9b454f34d9682edeb45ccdd5684cfdcd897affbe2271840ea31"
+}

@@ -1,0 +1,15 @@
+test_cancel_resume_race_has_one_winner (__main__.WaitContract.test_cancel_resume_race_has_one_winner) ... ok
+test_cancelled_wait_cannot_resume (__main__.WaitContract.test_cancelled_wait_cannot_resume) ... ok
+test_concurrent_duplicate_resume_has_one_job (__main__.WaitContract.test_concurrent_duplicate_resume_has_one_job) ... ok
+test_dispatch_failure_does_not_accept_resume (__main__.WaitContract.test_dispatch_failure_does_not_accept_resume) ... ok
+test_message_identity_is_bound_to_task (__main__.WaitContract.test_message_identity_is_bound_to_task) ... ok
+test_pause_failure_is_atomic_after_reopen (__main__.WaitContract.test_pause_failure_is_atomic_after_reopen) ... ok
+test_pause_roundtrip_and_invalid_transition (__main__.WaitContract.test_pause_roundtrip_and_invalid_transition) ... ok
+test_process_exit_after_interrupted_pause_preserves_consistency (__main__.WaitContract.test_process_exit_after_interrupted_pause_preserves_consistency) ... ok
+test_resume_replay_and_conflicting_content (__main__.WaitContract.test_resume_replay_and_conflicting_content) ... ok
+test_wait_and_task_identity_are_checked (__main__.WaitContract.test_wait_and_task_identity_are_checked) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.096s
+
+OK

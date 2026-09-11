@@ -53,6 +53,7 @@ description: 按真实项目的规模、风险与执行架构规划、审查和�
 | [规划流程](references/brainstorming.md) | `/brainstorming` |
 | [审查流程](references/check.md) | `/check` |
 | [构建约定](references/build.md) | `/build` 或隐式辅助 Agent 编码 |
+| [承诺到交付证据](references/evidence-workflow.md) | 规划交接、审查已有计划或验收实现；按本次范围追踪 |
 | [能力地图](references/capability-map.md) | 选取适用契约、建立覆盖矩阵 |
 | [架构适配](references/architecture-adapters.md) | 判断框架已有保障、图/循环/工作流/多 Agent 等差异 |
 | [接口与数据](references/contracts-and-data.md) | 设计入口、生命周期、身份、记录、查询与事务 |
@@ -77,4 +78,4 @@ description: 按真实项目的规模、风险与执行架构规划、审查和�
 
 交付前检查：模式是否混用；是否把框架能力重复实现；是否把示例 API/数据表/数值变成强制标准；是否把单进程机制说成集群保证；是否把回放、恢复、重试、补偿混称；结论是否由可访问的证据支持。
 
-维护者可使用 [场景验收集](evals/scenarios.md) 验证此 Skill 的决策边界；它不是目标项目的测试清单。
+维护者可使用 [场景验收集](evals/scenarios.md) 和 [隔离行为验证](evals/behavior-protocol.md) 验证此 Skill 的决策边界；它们不是目标项目的测试清单。文档校验、模拟项目行为验证与真实部署验收分别报告。

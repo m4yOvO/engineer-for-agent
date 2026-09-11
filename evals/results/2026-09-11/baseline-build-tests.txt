@@ -1,0 +1,101 @@
+test_cancel_resume_race_has_one_winner (__main__.WaitContract.test_cancel_resume_race_has_one_winner) ... FAIL
+test_cancelled_wait_cannot_resume (__main__.WaitContract.test_cancelled_wait_cannot_resume) ... ok
+test_concurrent_duplicate_resume_has_one_job (__main__.WaitContract.test_concurrent_duplicate_resume_has_one_job) ... FAIL
+test_dispatch_failure_does_not_accept_resume (__main__.WaitContract.test_dispatch_failure_does_not_accept_resume) ... ok
+test_message_identity_is_bound_to_task (__main__.WaitContract.test_message_identity_is_bound_to_task) ... FAIL
+test_pause_failure_is_atomic_after_reopen (__main__.WaitContract.test_pause_failure_is_atomic_after_reopen) ... FAIL
+test_pause_roundtrip_and_invalid_transition (__main__.WaitContract.test_pause_roundtrip_and_invalid_transition) ... FAIL
+test_process_exit_after_interrupted_pause_preserves_consistency (__main__.WaitContract.test_process_exit_after_interrupted_pause_preserves_consistency) ... FAIL
+test_resume_replay_and_conflicting_content (__main__.WaitContract.test_resume_replay_and_conflicting_content) ... ERROR
+test_wait_and_task_identity_are_checked (__main__.WaitContract.test_wait_and_task_identity_are_checked) ... FAIL
+
+======================================================================
+ERROR: test_resume_replay_and_conflicting_content (__main__.WaitContract.test_resume_replay_and_conflicting_content)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_build.py", line 105, in test_resume_replay_and_conflicting_content
+    self.assertEqual(self.resume(value={"revision": 1, "approved": True}), first)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "evals/assess_build.py", line 54, in resume
+    return service.resume(self.db, **args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "evals/fixtures/build_wait/service.py", line 45, in resume
+    raise ValueError("not waiting")
+ValueError: not waiting
+
+======================================================================
+FAIL: test_cancel_resume_race_has_one_winner (__main__.WaitContract.test_cancel_resume_race_has_one_winner)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_build.py", line 197, in test_cancel_resume_race_has_one_winner
+    self.assertEqual(sorted(r[0] for r in results), ["conflict", "ok"])
+AssertionError: Lists differ: ['ok', 'ok'] != ['conflict', 'ok']
+
+First differing element 0:
+'ok'
+'conflict'
+
+- ['ok', 'ok']
++ ['conflict', 'ok']
+
+======================================================================
+FAIL: test_concurrent_duplicate_resume_has_one_job (__main__.WaitContract.test_concurrent_duplicate_resume_has_one_job)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_build.py", line 184, in test_concurrent_duplicate_resume_has_one_job
+    self.assertEqual(self.count("jobs"), 1)
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_message_identity_is_bound_to_task (__main__.WaitContract.test_message_identity_is_bound_to_task)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_build.py", line 129, in test_message_identity_is_bound_to_task
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_pause_failure_is_atomic_after_reopen (__main__.WaitContract.test_pause_failure_is_atomic_after_reopen)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_build.py", line 60, in test_pause_failure_is_atomic_after_reopen
+    self.assertEqual(self.task()["state"], "active")
+AssertionError: 'waiting' != 'active'
+- waiting
++ active
+
+
+======================================================================
+FAIL: test_pause_roundtrip_and_invalid_transition (__main__.WaitContract.test_pause_roundtrip_and_invalid_transition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_build.py", line 94, in test_pause_roundtrip_and_invalid_transition
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_process_exit_after_interrupted_pause_preserves_consistency (__main__.WaitContract.test_process_exit_after_interrupted_pause_preserves_consistency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_build.py", line 84, in test_process_exit_after_interrupted_pause_preserves_consistency
+    self.assertEqual(self.task()["state"], "active")
+AssertionError: 'waiting' != 'active'
+- waiting
++ active
+
+
+======================================================================
+FAIL: test_wait_and_task_identity_are_checked (__main__.WaitContract.test_wait_and_task_identity_are_checked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "evals/assess_build.py", line 116, in test_wait_and_task_identity_are_checked
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.055s
+
+FAILED (failures=7, errors=1)

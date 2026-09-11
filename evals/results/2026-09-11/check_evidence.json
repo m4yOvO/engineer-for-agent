@@ -1,0 +1,260 @@
+{
+  "L1_restart": {
+    "before_exit": [
+      "task-a"
+    ],
+    "new_process": []
+  },
+  "L2_snapshot_failure": {
+    "exception": "injected snapshot failure",
+    "task": {
+      "state": "waiting",
+      "payload": {},
+      "accepted_at": 1000,
+      "deadline": 1120
+    }
+  },
+  "L2_late_release": {
+    "saved": [
+      {
+        "state": "waiting",
+        "payload": {},
+        "accepted_at": 1010,
+        "deadline": 1130
+      }
+    ],
+    "current": {
+      "state": "active",
+      "payload": {},
+      "accepted_at": 1010,
+      "deadline": 1130,
+      "input": {
+        "reply": "during-save"
+      },
+      "slot_released": true
+    }
+  },
+  "L3_cancel_and_duplicate_resume": {
+    "cancelled": {
+      "state": "cancelled",
+      "payload": {},
+      "accepted_at": 1000,
+      "deadline": 1120,
+      "slot_released": true
+    },
+    "once": {
+      "state": "active",
+      "payload": {},
+      "accepted_at": 1000,
+      "deadline": 1120,
+      "slot_released": true,
+      "input": {
+        "reply": "first"
+      }
+    },
+    "twice": {
+      "state": "active",
+      "payload": {},
+      "accepted_at": 1000,
+      "deadline": 1120,
+      "slot_released": true,
+      "input": {
+        "reply": "second"
+      }
+    }
+  },
+  "L4_deadline": {
+    "initial": {
+      "state": "active",
+      "payload": {},
+      "accepted_at": 1000,
+      "deadline": 1120
+    },
+    "at_1110": {
+      "state": "active",
+      "payload": {},
+      "accepted_at": 1000,
+      "deadline": 1230,
+      "slot_released": true,
+      "input": {}
+    },
+    "at_1300": {
+      "state": "active",
+      "payload": {},
+      "accepted_at": 1000,
+      "deadline": 1420,
+      "slot_released": true,
+      "input": {}
+    }
+  },
+  "O1_accepted": {
+    "op-a": {
+      "state": "succeeded",
+      "version": 1,
+      "history": [
+        {
+          "status": "accepted",
+          "version": 1
+        }
+      ]
+    }
+  },
+  "O2_reconcile_success": {
+    "lookup_calls": [],
+    "records": {
+      "op-a": {
+        "state": "succeeded",
+        "version": 1,
+        "history": [
+          {
+            "status": "accepted",
+            "version": 1
+          }
+        ]
+      }
+    }
+  },
+  "O3_reconcile_history": {
+    "op-a": {
+      "state": "withdrawn",
+      "version": 1,
+      "history": [
+        {
+          "status": "unknown",
+          "version": 1
+        }
+      ]
+    }
+  },
+  "O3_resubmission_history": {
+    "before": {
+      "op-a": {
+        "state": "withdrawn",
+        "version": 4,
+        "history": [
+          {
+            "status": "unknown",
+            "version": 1
+          },
+          {
+            "status": "withdrawn",
+            "version": 4
+          }
+        ]
+      }
+    },
+    "after": {
+      "op-a": {
+        "state": "succeeded",
+        "version": 5,
+        "history": [
+          {
+            "status": "accepted",
+            "version": 5
+          }
+        ]
+      }
+    }
+  },
+  "O4_notification_order": {
+    "newest": {
+      "op-a": {
+        "state": "withdrawn",
+        "version": 3,
+        "history": [
+          {
+            "status": "succeeded",
+            "version": 2
+          },
+          {
+            "status": "withdrawn",
+            "version": 3
+          }
+        ]
+      }
+    },
+    "after_stale": {
+      "op-a": {
+        "state": "succeeded",
+        "version": 2,
+        "history": [
+          {
+            "status": "succeeded",
+            "version": 2
+          },
+          {
+            "status": "withdrawn",
+            "version": 3
+          },
+          {
+            "status": "succeeded",
+            "version": 2
+          }
+        ]
+      }
+    },
+    "after_duplicate": {
+      "op-a": {
+        "state": "succeeded",
+        "version": 2,
+        "history": [
+          {
+            "status": "succeeded",
+            "version": 2
+          },
+          {
+            "status": "withdrawn",
+            "version": 3
+          },
+          {
+            "status": "succeeded",
+            "version": 2
+          },
+          {
+            "status": "succeeded",
+            "version": 2
+          }
+        ]
+      }
+    }
+  },
+  "O5_floor": {
+    "expired_after_5": [
+      {
+        "sequence": 10,
+        "value": "ten"
+      },
+      {
+        "sequence": 11,
+        "value": "eleven"
+      }
+    ],
+    "valid_after_9": [
+      {
+        "sequence": 10,
+        "value": "ten"
+      },
+      {
+        "sequence": 11,
+        "value": "eleven"
+      }
+    ]
+  },
+  "O6_revocation": {
+    "before": {
+      "sequence": 10,
+      "value": "ten"
+    },
+    "after": {
+      "sequence": 11,
+      "value": "eleven"
+    },
+    "new_subscription": "access denied"
+  },
+  "positive_cursor_and_shallow_copy": {
+    "output_sequences": [
+      11
+    ],
+    "source_unchanged_for_scalar_edit": true
+  }
+}
